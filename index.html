@@ -29,7 +29,26 @@
             <a href="#kontak">Contact</a>
           </div>
           <a href="#kontak" class="nav-cta">Get In Touch</a>
+          <button
+            class="hamburger"
+            id="hamburgerBtn"
+            aria-label="Buka menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </nav>
+      </div>
+      <div class="menu-overlay" id="menuOverlay"></div>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#tentang">About Us</a>
+        <a href="#layanan">Service</a>
+        <a href="#berita">News</a>
+        <a href="#kontak">Contact</a>
+        <a href="#kontak" class="nav-cta mobile-cta">Get In Touch</a>
       </div>
     </header>
 
@@ -62,16 +81,15 @@
           KELAS SISTEM INFORMASI ANGKATAN 2026/2027
         </div>
         <h1>
-          <span class="line"><span>Energi matahari,</span></span>
+          <span class="line"><span>Selamat datang,</span></span>
           <span class="line"
-            ><span class="accent">untuk semua penjuru</span></span
+            ><span class="accent"> Di Kelas Sistem Informasi</span></span
           >
-          <span class="line"><span>negeri.</span></span>
+          <span class="line"><span>Angkatan 2026/2027.</span></span>
         </h1>
         <p class="sub">
-          Kami merancang, membangun, dan mengoperasikan infrastruktur energi
-          surya skala utilitas serta jaringan mikro komunitas di seluruh
-          kepulauan Indonesia.
+          Menjadi mahasiswa yang unggul dalam teknologi informasi, analisis
+          bisnis, dan transformasi digital.
         </p>
         <div class="hero-actions">
           <a href="#layanan" class="btn-primary">Lihat Layanan Kami →</a>
@@ -208,14 +226,16 @@
 
         <div class="news-grid">
           <div class="news-card featured reveal-item">
-            <div class="news-cat mono">Peluncuran Proyek</div>
-            <div class="news-date mono">28 Juni 2026</div>
-            <h3>HELIOS Resmikan PLTS Terapung Terbesar di Waduk Jatiluhur</h3>
-            <p>
-              Fasilitas berkapasitas 145 MW ini menjadi PLTS terapung terbesar
-              kedua di Asia Tenggara, mampu mengaliri lebih dari 200 ribu rumah
-              tangga.
-            </p>
+            <div class="news-cat mono">
+              Laporan Project Based Learning (PjBL)
+            </div>
+            <div class="news-date mono">07 Jli 2026</div>
+            <h3>
+              Peran Program Makan Bergizi Gratis (MBG) Dalam Membangun
+              Resiliensi dan Memperkuat Identitas Nasional Indonesia Di Era
+              Disrupsi Digital dan Globalisasi Budaya
+            </h3>
+            <p>Disusun oleh kelompok 1,</p>
             <div class="news-read">
               Baca selengkapnya <span class="arrow">→</span>
             </div>
@@ -283,6 +303,14 @@
         >
       </div>
     </section>
+    <div>
+      <iframe
+        src="Laporan Project Based Learning_(PjBL) PPKN_Kelompok.pdf"
+        width="100%"
+        height="800"
+      >
+      </iframe>
+    </div>
 
     <footer>
       <div class="wrap">
@@ -338,6 +366,45 @@
       ).matches;
 
       const header = document.getElementById("siteHeader");
+
+      const hamburgerBtn = document.getElementById("hamburgerBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const menuOverlay = document.getElementById("menuOverlay");
+
+      function openMobileMenu() {
+        hamburgerBtn.classList.add("active");
+        mobileMenu.classList.add("open");
+        menuOverlay.classList.add("open");
+        hamburgerBtn.setAttribute("aria-expanded", "true");
+        document.body.classList.add("menu-open");
+      }
+
+      function closeMobileMenu() {
+        hamburgerBtn.classList.remove("active");
+        mobileMenu.classList.remove("open");
+        menuOverlay.classList.remove("open");
+        hamburgerBtn.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
+      }
+
+      hamburgerBtn.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("open")) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      });
+
+      menuOverlay.addEventListener("click", closeMobileMenu);
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMobileMenu);
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 900) closeMobileMenu();
+      });
+
       ScrollTrigger.create({
         start: "top -60",
         onUpdate: (self) => {
