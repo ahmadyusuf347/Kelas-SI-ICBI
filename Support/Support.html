@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support - SIICBI 2026</title>
+    <!-- Menggunakan font Inter dari Google Fonts agar terlihat modern -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      body {
+        background-color: #f4f5f9; /* Warna background luar yang lembut */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .card-container {
+        background-color: #ffffff;
+        width: 100%;
+        max-width: 900px;
+        border-radius: 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: row; /* Kiri ke kanan untuk Laptop */
+        overflow: hidden;
+        padding: 10px; /* Jarak antara card putih dan background gradien di dalamnya */
+      }
+
+      /* --- Sisi Kiri (Logo & Gradien) --- */
+      .left-side {
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #ffffff 65%,
+          #747474 100%
+        );
+        border-radius: 20px;
+        width: 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        color: white;
+        text-align: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 32px;
+        font-weight: 700;
+        transition: all 0.3s ease;
+      }
+
+      .logo-icon {
+        font-size: 40px;
+      }
+
+      /* --- Sisi Kanan (Form) --- */
+      .right-side {
+        width: 55%;
+        padding: 40px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .header h1 {
+        font-size: 28px;
+        color: #111827;
+        margin-bottom: 8px;
+      }
+
+      .header p {
+        font-size: 14px;
+        color: #6b7280;
+        margin-bottom: 30px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #111827;
+        margin-bottom: 8px;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #374151;
+        outline: none;
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .btn-submit {
+        width: 100%;
+        background-color: #312e81; /* Warna biru gelap / ungu */
+        color: #ffffff;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          background-color 0.3s ease,
+          transform 0.1s ease;
+        box-shadow: 0 4px 12px rgba(49, 46, 129, 0.2);
+      }
+
+      .btn-submit:hover {
+        background-color: #23215e;
+      }
+
+      .btn-submit:active {
+        transform: scale(0.98);
+      }
+
+      /* --- Responsif (Ukuran Handphone) --- */
+      @media screen and (max-width: 768px) {
+        .card-container {
+          flex-direction: column; /* Mengubah susunan menjadi atas-bawah */
+          padding: 10px;
+        }
+
+        .left-side {
+          width: 100%;
+          padding: 30px 20px;
+          border-radius: 16px;
+          min-height: 150px;
+        }
+
+        .logo {
+          font-size: 24px; /* Memperkecil logo di HP */
+        }
+
+        .logo-icon {
+          font-size: 30px; /* Memperkecil ikon logo di HP */
+        }
+
+        .right-side {
+          width: 100%;
+          padding: 30px 20px;
+        }
+
+        .header h1 {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card-container">
+      <!-- Sisi Kiri (Logo & Background) -->
+      <div class="left-side">
+        <div class="logo" style="width: 150px; height: auto">
+          <img src="../img/Logo SIICBI2026.svg" alt="" />
+        </div>
+      </div>
+
+      <!-- Sisi Kanan (Form) -->
+      <div class="right-side">
+        <div class="header">
+          <h1>Contact Support</h1>
+          <p>We're here to help with your inquiry.</p>
+        </div>
+
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="fullname">Your Full Name</label>
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              placeholder="Ahmad Yusuf"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Your Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="yusuf.ahmad@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject of Inquiry</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="e.g., Registration Issue"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Describe your issue..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send Request</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
