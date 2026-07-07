@@ -144,6 +144,25 @@
     text-align:center;
     border-bottom:1px solid var(--blue);
   }
+  .mobile-menu-footer{
+    margin-top:auto;
+    padding:28px 32px 34px;
+    border-top:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+  .mobile-menu-footer img{
+    width:52px;
+    height:auto;
+  }
+  .mobile-menu-footer p{
+    font-size:11.5px;
+    line-height:1.6;
+    color:var(--text-faint);
+    max-width:220px;
+  }
 
   .menu-overlay{
     display:none;
