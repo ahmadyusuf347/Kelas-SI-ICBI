@@ -691,3 +691,17 @@
     stroke-dashoffset: -124;
   }
 }
+
+
+
+@media (max-width:900px){
+  /* ... aturan media query sebelumnya ... */
+
+  .stat {
+    padding: 24px 16px; /* Perkecil jarak ruang dalam */
+  }
+  
+  .stat .num {
+    font-size: 32px; /* Perkecil sedikit ukuran font utama */
+  }
+}
