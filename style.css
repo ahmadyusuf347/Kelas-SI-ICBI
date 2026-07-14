@@ -12,6 +12,8 @@
     --text-faint:#8492A6;
     --biru-logo: #017ea7;
     --orange: #ff8811;
+    --grey-white: #e9ecef;
+    --greyhitam: #adb5bd;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -515,4 +517,110 @@
 }
 .photo-slider .slide.active{
   opacity:1;
+}
+
+/* ============================================= */
+/* --- NEW SECTION: OUR PROFIL MAHASISWA --- */
+/* ============================================= */
+.students-section {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+/* Inherit styling untuk .section-head dan .section-eyebrow yang sudah ada */
+
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 kolom default desktop */
+    gap: 32px;
+}
+
+.student-card {
+    background-color: var(--grey-white);
+    border-radius: 20px;
+    padding: 15px;
+    border: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alur teks ke kiri, seperti contoh */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.student-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 40px rgba(10, 14, 22, 0.08);
+    border-color: var(--biru-logo);
+}
+
+.student-img {
+    width: 100%;
+    aspect-ratio: 4/5; /* Rasio gambar mendekati contoh */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    filter: grayscale(100%); /* Efek grayscale awal, sama seperti slider foto */
+    transition: filter 0.6s ease;
+}
+
+.student-card:hover .student-img {
+    filter: grayscale(0%);
+}
+
+.student-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.ig-follow-btn {
+    margin-top: auto; /* Mendorong tombol ke bagian bawah kartu */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--greyhitam); /* Gunakan blue-tint agar senada */
+    color: var(--text-dim);
+    padding: 10px 18px;
+    border-radius: 30px; /* Bentuk pil, seperti contoh */
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    align-self: flex-end;
+}
+
+.ig-follow-btn img {
+    width: 16px;
+    height: 16px;
+    filter: grayscale(100%) opacity(0.7); /* Grayscale awal untuk ikon */
+}
+
+.ig-follow-btn:hover {
+    background-color: var(--biru-logo);
+    color: var(--white);
+}
+
+.ig-follow-btn:hover svg {
+    filter: grayscale(0%) opacity(1) invert(100%); /* Ikon putih saat hover */
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 900px) {
+    .students-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk ukuran HP */
+        gap: 20px; /* Celah lebih kecil di HP */
+    }
+    .student-card {
+        padding: 16px;
+    }
+    .student-name {
+        font-size: 17px;
+    }
+    .ig-follow-btn {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
 }
