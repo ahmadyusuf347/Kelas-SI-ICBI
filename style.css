@@ -15,6 +15,8 @@
     --grey-white: #e9ecef;
     --greyhitam: #adb5bd;
     --fink: #f87060;
+    --buton-profil: #e9e8e8;
+    --background-profil-card: #bdbec1;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -270,7 +272,7 @@
     padding:15px 30px;
     font-size:14px;
     color:var(--ink);
-    border:1px solid var(--fink);
+    border:1px solid var(--biru-logo);
     border-radius:2px;
     transition:border-color .25s ease, background .25s ease;
   }
@@ -298,7 +300,7 @@
     font-weight:600;
     color:var(--ink);
   }
-  .stat .num .unit{font-size:20px;color:var(--blue);margin-left:2px;}
+  .stat .num .unit{font-size:20px;color:var(--biru-logo);margin-left:2px;}
   .stat .label{
     margin-top:8px;
     font-size:13px;
@@ -315,7 +317,7 @@
     gap:40px;
   }
   .section-eyebrow{
-    font-size:12px;color:var(--blue);margin-bottom:18px;
+    font-size:17px;color:var(--biru-logo);margin-bottom:18px; font-weight: bold;
   }
   .section-head h2{font-size:clamp(30px,4vw,46px);max-width:560px;}
   .section-head p{color:var(--text-dim);max-width:340px;font-size:15px;line-height:1.6;padding-bottom:6px;}
@@ -330,7 +332,7 @@
   }
   .pillar{
     background:var(--white);
-    padding:44px 36px;
+    padding:36px 36px;
     transition:background .3s ease;
   }
   .pillar:hover{background:var(--blue-tint);}
@@ -456,9 +458,9 @@
 .photo-slider{
   position:relative;
   width:100%;
-  aspect-ratio:21/8;       /* bentuk rectangle, konsisten di semua ukuran */
-  margin:60px 0;
-  border-radius:4px;
+  aspect-ratio:21/10;       /* bentuk rectangle, konsisten di semua ukuran */
+  margin:20px 0;
+  border-radius:0px;
   overflow:hidden;
   border:1px solid var(--line);
   background:var(--panel);
@@ -503,7 +505,7 @@
 }
 
 @media (max-width:900px){
-  .photo-slider{margin:40px 0;}
+  .photo-slider{margin:20px 0;}
 }
 /*----------------------------------------*/
 
@@ -537,14 +539,15 @@
 }
 
 .student-card {
-    background-color: var(--grey-white);
-    border-radius: 20px;
-    padding: 15px;
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 10px;
     border: 1px solid var(--line);
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Alur teks ke kiri, seperti contoh */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .student-card:hover {
@@ -582,10 +585,10 @@
     margin-top: auto; /* Mendorong tombol ke bagian bawah kartu */
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background-color: var(--greyhitam); /* Gunakan blue-tint agar senada */
+    gap: 7px;
+    background-color: var(--buton-profil); /* Gunakan blue-tint agar senada */
     color: var(--text-dim);
-    padding: 10px 18px;
+    padding: 8px 15px;
     border-radius: 30px; /* Bentuk pil, seperti contoh */
     font-size: 13px;
     font-weight: 500;
@@ -615,7 +618,7 @@
         gap: 20px; /* Celah lebih kecil di HP */
     }
     .student-card {
-        padding: 16px;
+        padding: 10px;
     }
     .student-name {
         font-size: 17px;
