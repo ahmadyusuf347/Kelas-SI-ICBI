@@ -630,3 +630,57 @@
     display: none;
 }
 /*-----------------------------*/
+
+/* ========================================== */
+/* PRELOADER STYLES */
+/* ========================================== */
+#preloader {
+  position: fixed;
+  inset: 0; /* Menutupi seluruh layar (top, left, right, bottom 0) */
+  background-color: var(--white);
+  z-index: 9999; /* Pastikan berada di atas semua elemen, termasuk header yang memiliki z-index 100 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Kelas untuk menyembunyikan preloader secara halus */
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Animasi putaran SVG */
+.spinner {
+  width: 50px;
+  height: 50px;
+  animation: rotate 2s linear infinite;
+}
+
+.spinner .path {
+  stroke: var(--blue);
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
