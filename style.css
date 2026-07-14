@@ -624,3 +624,9 @@
         font-size: 12px;
     }
 }
+
+/* Class untuk menyembunyikan kartu mahasiswa */
+.student-card.hidden-card {
+    display: none;
+}
+/*-----------------------------*/

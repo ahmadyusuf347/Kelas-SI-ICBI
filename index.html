@@ -319,9 +319,17 @@
           <!-- Silakan copy-paste blok .student-card di atas untuk membuat 20 mahasiswa -->
         </div>
       </div>
+      <!-- Tambahkan area tombol ini -->
+        <div class="students-action" style="text-align: center; margin-top: 50px;">
+          <button id="btnSelengkapnya" class="btn-ghost" style="cursor: pointer;">
+            Lihat Selengkapnya
+          </button>
+        </div>
+      </div> <!-- Ini adalah penutup div.wrap -->
     </section>
     <!-- END OF NEW SECTION -->
     <!-- ============================================= -->
+     
 
     <div class="wrap">
       <div class="photo-slider" id="photoSlider">
@@ -863,6 +871,58 @@ sliderDots.forEach((dot, i) => {
     sliderTimer = setInterval(nextSlide, slideDuration);
   });
 });
+
+// ==========================================
+      // LOGIKA TOMBOL LIHAT SELENGKAPNYA
+      // ==========================================
+      const studentCards = document.querySelectorAll(".students-grid .student-card");
+      const btnSelengkapnya = document.getElementById("btnSelengkapnya");
+      let isExpanded = false;
+      const cardLimit = 5; // Jumlah kartu yang ingin ditampilkan di awal
+
+      // Sembunyikan kartu di luar batas awal saat halaman pertama kali dimuat
+      studentCards.forEach((card, index) => {
+        if (index >= cardLimit) {
+          card.classList.add("hidden-card");
+        }
+      });
+
+      // Jika jumlah mahasiswa melebihi batas, aktifkan tombol
+      if (studentCards.length > cardLimit) {
+        btnSelengkapnya.addEventListener("click", () => {
+          isExpanded = !isExpanded;
+          
+          studentCards.forEach((card, index) => {
+            if (index >= cardLimit) {
+              if (isExpanded) {
+                card.classList.remove("hidden-card");
+              } else {
+                card.classList.add("hidden-card");
+              }
+            }
+          });
+
+          // Ubah teks tombol sesuai dengan status
+          if (isExpanded) {
+            btnSelengkapnya.textContent = "Tampilkan Lebih Sedikit";
+          } else {
+            btnSelengkapnya.textContent = "Lihat Selengkapnya";
+            // Scroll kembali ke atas section agar pengguna tidak kehilangan konteks
+            document.getElementById("profil-mahasiswa").scrollIntoView({ behavior: "smooth" });
+          }
+
+          // PENTING: Refresh ScrollTrigger GSAP karena tinggi halaman (DOM) berubah
+          setTimeout(() => {
+            ScrollTrigger.refresh();
+          }, 100);
+        });
+      } else {
+        // Jika total mahasiswa 5 atau kurang, sembunyikan tombol
+        if(btnSelengkapnya) {
+            btnSelengkapnya.style.display = "none";
+        }
+      }
+
     </script>
   </body>
 </html>
