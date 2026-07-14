@@ -270,11 +270,11 @@
     padding:15px 30px;
     font-size:14px;
     color:var(--ink);
-    border:1px solid var(--line);
+    border:1px solid var(--fink);
     border-radius:2px;
     transition:border-color .25s ease, background .25s ease;
   }
-  .btn-ghost:hover{border-color:var(--blue);background:var(--fink);}
+  .btn-ghost:hover{border-color:var(--fink);background:var(--fink);}
 
   /* STATS */
   .stats{
